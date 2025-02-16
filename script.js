@@ -4,7 +4,7 @@
 
 function fetchData() {
     // Define the URL from which to fetch JSON data (replace with your link)
-    const url = 'https://thekillgfx.github.io/'
+    const url = 'https://storage.googleapis.com/coc-store/trophies/GYLG9J9QR.json'
   
     // Get the container where the JSON data will be displayed
     const dataContainer = document.getElementById('json-data');
