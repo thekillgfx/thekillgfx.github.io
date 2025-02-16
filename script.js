@@ -1,7 +1,14 @@
-// Function to fetch JSON data from a URL and display it in the HTML
+
+// https://thekillgfx.github.io/
+
+
 function fetchData() {
     // Define the URL from which to fetch JSON data (replace with your link)
-    const url = 'https://thekillgfx.github.io/';  // Example link
+    const url = 'https://thekillgfx.github.io/'
+  
+    // Get the container where the JSON data will be displayed
+    const dataContainer = document.getElementById('json-data');
+    dataContainer.textContent = 'Loading...';  // Show loading text while fetching
   
     // Use fetch to get the data
     fetch(url)
@@ -14,13 +21,15 @@ function fetchData() {
       })
       .then(data => {
         // Display the JSON data inside the <pre> element
-        const dataContainer = document.getElementById('json-data');
         dataContainer.textContent = JSON.stringify(data, null, 2); // Pretty print JSON
       })
       .catch(error => {
+        // Handle the error and display a user-friendly message
         console.error('There was a problem with the fetch operation:', error);
-        const dataContainer = document.getElementById('json-data');
-        dataContainer.textContent = 'Failed to fetch data.';
+        dataContainer.textContent = 'Failed to fetch data. Please try again later.';
       });
   }
+  
+  // Call fetchData when the page loads to show data by default
+  window.onload = fetchData;
   

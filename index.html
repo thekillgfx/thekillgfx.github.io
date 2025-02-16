@@ -15,14 +15,31 @@
       padding: 10px;
       background-color: #f9f9f9;
     }
+    button {
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #refresh-icon {
+      font-size: 24px;
+    }
   </style>
 </head>
 <body>
   <h1>JSON Data Viewer</h1>
-  <button onclick="fetchData()">Fetch JSON Data</button>
+  <button onclick="fetchData()" id="refresh-button">
+    <span id="refresh-icon">&#x21bb;</span> Refresh Data
+  </button>
   <div id="data-container">
     <h3>Data from JSON:</h3>
-    <pre id="json-data"></pre>
+    <pre id="json-data">Loading...</pre>
   </div>
 
   <script src="script.js"></script>
