@@ -1,7 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display JSON Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #data-container {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages!</p>
+  <h1>JSON Data Viewer</h1>
+  <button onclick="fetchData()">Fetch JSON Data</button>
+  <div id="data-container">
+    <h3>Data from JSON:</h3>
+    <pre id="json-data"></pre>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
