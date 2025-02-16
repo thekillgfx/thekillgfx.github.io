@@ -3,45 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Display JSON Data</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    #data-container {
-      margin-top: 20px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      background-color: #f9f9f9;
-    }
-    button {
-      font-size: 18px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    #refresh-icon {
-      font-size: 24px;
-    }
-  </style>
+  <title>Metrics Dashboard</title>
+  
+  <!-- Link to the external CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Include Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>JSON Data Viewer</h1>
-  <button onclick="fetchData()" id="refresh-button">
-    <span id="refresh-icon">&#x21bb;</span> Refresh Data
-  </button>
-  <div id="data-container">
-    <h3>Data from JSON:</h3>
-    <pre id="json-data">Loading...</pre>
+
+  <div class="container">
+    <h1>Game Metrics Dashboard</h1>
+
+    <!-- Metrics Section -->
+    <div class="metrics">
+      <div class="metric">
+        <span>Attack Wins:</span> <span id="attackWins">0</span>
+      </div>
+      <div class="metric">
+        <span>Defense Wins:</span> <span id="defenseWins">0</span>
+      </div>
+      <div class="metric">
+        <span>Trophies:</span> <span id="trophies">0</span>
+      </div>
+    </div>
+
+    <!-- Graph Section -->
+    <canvas id="trophyChart"></canvas>
+
+    <!-- Table Section -->
+    <div class="view-switch">
+      <button id="viewGraphBtn">View Graph</button>
+      <button id="viewTableBtn">View Table</button>
+    </div>
+    
+    <table id="trophyTable" style="display: none;">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Trophies</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
   </div>
 
+  <!-- Link to the external JS file -->
   <script src="script.js"></script>
 </body>
 </html>

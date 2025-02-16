@@ -1,0 +1,97 @@
+body {
+    background-color: #121212; /* Dark theme background */
+    color: #e0e0e0; /* Light grey text for contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #a7a7f7; /* Light violet for titles */
+  }
+  
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e2f; /* Dark violet background for the container */
+    border-radius: 10px;
+  }
+  
+  .metrics {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    color: #a7a7f7;
+    font-size: 1.2em;
+  }
+  
+  .metric {
+    background-color: #2d2d44;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .metric span {
+    font-weight: bold;
+  }
+  
+  canvas {
+    margin: 20px auto;
+    display: block;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: #2d2d44;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #444;
+  }
+  
+  th {
+    background-color: #3e3e60;
+    color: #fff;
+  }
+  
+  td {
+    color: #ddd;
+  }
+  
+  .gain {
+    color: #3eaf6f;
+  }
+  
+  .loss {
+    color: #e74c3c;
+  }
+  
+  .view-switch {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .view-switch button {
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .view-switch button:hover {
+    background-color: #666;
+  }
+  
