@@ -6,6 +6,22 @@ const profileTag = url.split('/').pop().split('.')[0]; // Extract the profile ta
 // Update the <h1> element with the profile tag
 document.getElementById('profileTitle').textContent = `#${profileTag} - stats`;
 
+// Function to calculate trophies gained/lost in the last N days
+function calculateTrophiesChange(data, days) {
+  const today = new Date();
+  const filteredData = data.filter(item => 
+    (today - new Date(item.execution_date)) / (1000 * 3600 * 24) <= days
+  );
+
+  if (filteredData.length < 2) return 0; // Not enough data to compare
+
+  const firstRecord = filteredData[0].trophies; // Oldest record in range
+  const lastRecord = filteredData[filteredData.length - 1].trophies; // Latest record
+
+  return lastRecord - firstRecord; // Difference = trophies gained/lost
+}
+
+
 // Fetch and display data
 fetch(url)
   .then(response => response.json())
