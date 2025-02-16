@@ -14,32 +14,29 @@ fetch(url)
       throw new Error("Unexpected data format: Expected an array");
     }
 
-    // Sort data by execution_date (if not already sorted)
+    // Sort data by execution_date
     data.sort((a, b) => new Date(a.execution_date) - new Date(b.execution_date));
 
-    // Create a dictionary to store only the latest record for each day
+    // Keep only the latest record per day
     const dailyData = {};
     data.forEach(record => {
-      const dateKey = new Date(record.execution_date).toISOString().split('T')[0]; // YYYY-MM-DD format
-      dailyData[dateKey] = record; // Keep only the latest entry for the day
+      const dateKey = new Date(record.execution_date).toISOString().split('T')[0]; // YYYY-MM-DD
+      dailyData[dateKey] = record; // Replace with the latest entry of the day
     });
+    const recentData = Object.values(dailyData); // Convert back to array
 
-    // Convert dictionary back to an array
-    const recentData = Object.values(dailyData);
-
-    // Calculate trophy differences for gain/loss
+    // Calculate trophies gained/lost
+    const trophiesLast7d = calculateTrophiesChange(recentData, 7);
+    const trophiesLast14d = calculateTrophiesChange(recentData, 14);
+    const trophiesLast30d = calculateTrophiesChange(recentData, 30);
+    
+    // Calculate average daily gain/loss
     const dailyDifferences = calculateTrophyDifference(recentData);
-
-    // Calculate metrics for the last 7, 14, 30 days
-    const today = new Date();
-    const trophiesLast7d = calculateTotalTrophies(recentData, 7);
-    const trophiesLast14d = calculateTotalTrophies(recentData, 14);
-    const trophiesLast30d = calculateTotalTrophies(recentData, 30);
     const avgDailyGain = dailyDifferences.length
       ? dailyDifferences.reduce((sum, diff) => sum + diff, 0) / dailyDifferences.length
       : 0;
 
-    // Update UI with calculated values
+    // Update the UI
     document.getElementById('trophies7d').textContent = trophiesLast7d;
     document.getElementById('trophies14d').textContent = trophiesLast14d;
     document.getElementById('trophies30d').textContent = trophiesLast30d;
