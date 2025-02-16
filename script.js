@@ -1,3 +1,12 @@
+const url = 'https://storage.googleapis.com/coc-store/trophies/GYLG9J9QR.json'; // Example URL
+
+// Extract profile tag from the URL
+const profileTag = url.split('/').pop().split('.')[0]; // Extract the profile tag from the URL
+
+// Update the <h1> element with the profile tag
+document.getElementById('profileTitle').textContent = `#${profileTag} - stats`;
+
+// Fetch and display data
 fetch(url)
   .then(response => response.json())
   .then(data => {
