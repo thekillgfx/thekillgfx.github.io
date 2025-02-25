@@ -27,7 +27,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-.metric {
+.metric-container {
   background-color: #2d2d44; /* Slightly lighter background for metrics */
   padding: 20px;
   border-radius: 8px;
@@ -35,9 +35,31 @@ h1 {
   text-align: center;
 }
 
-.metric span {
-  font-size: 1.1em;
+.metric-container .title{
+  font-size: .7em;
+  text-transform: uppercase;
 }
+
+.metric span{
+  line-height: 1em;
+  vertical-align: middle;
+}
+
+.metric .arrow{
+  font-size: .6em;
+  text-transform: uppercase;
+  margin-left: .5em;
+}
+
+.metric .arrow.positive{
+  color: greenyellow;
+}
+
+.metric .arrow.negative{
+  color: red;
+}
+
+
 
 button {
   background-color: #9b59b6; /* Dark violet for buttons */
