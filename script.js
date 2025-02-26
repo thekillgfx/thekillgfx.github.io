@@ -21,6 +21,8 @@ function calculateTrophiesChange(data, days) {
   return lastRecord - firstRecord; // Difference = trophies gained/lost
 }
 
+const icon_up = '<svg width="10" height="10" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> <polygon points="50,10 90,90 10,90"/></svg>'
+const icon_down = '<svg width="10" height="10" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="10,10 90,10 50,90" fill="black"/></svg>'
 
 // Fetch and display data
 fetch(url)
@@ -56,37 +58,37 @@ fetch(url)
     document.getElementById('trophies7d').textContent = trophiesLast7d;
     element = document.querySelector('.metric:has(#trophies7d) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '⯅';
+      element.innerHTML = icon_up;
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#trophies7d) .arrow').innerHTML = '⯆';
+      document.querySelector('.metric:has(#trophies7d) .arrow').innerHTML = icon_down;
       element.classList.add('negative');
     }
     document.getElementById('trophies14d').textContent = trophiesLast14d;
     element = document.querySelector('.metric:has(#trophies14d) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '⯅';
+      element.innerHTML = icon_up;
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#trophies14d) .arrow').innerHTML = '⯆';
+      document.querySelector('.metric:has(#trophies14d) .arrow').innerHTML = icon_down;
       element.classList.add('negative');
     }
     document.getElementById('trophies30d').textContent = trophiesLast30d;
     element = document.querySelector('.metric:has(#trophies30d) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '⯅';
+      element.innerHTML = icon_up;
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#trophies30d) .arrow').innerHTML = '⯆';
+      document.querySelector('.metric:has(#trophies30d) .arrow').innerHTML = icon_down;
       element.classList.add('negative');
     }
     document.getElementById('avgDailyGain').textContent = avgDailyGain.toFixed(2);
     element = document.querySelector('.metric:has(#avgDailyGain) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '⯅';
+      element.innerHTML = icon_up;
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#avgDailyGain) .arrow').innerHTML = '⯆';
+      document.querySelector('.metric:has(#avgDailyGain) .arrow').innerHTML = icon_down;
       element.classList.add('negative');
     }
 

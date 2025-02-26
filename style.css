@@ -51,12 +51,12 @@ h1 {
   margin-left: .5em;
 }
 
-.metric .arrow.positive{
-  color: greenyellow;
+.metric .arrow.positive svg{
+  fill: greenyellow;
 }
 
-.metric .arrow.negative{
-  color: red;
+.metric .arrow.negative svg{
+  fill: red;
 }
 
 
