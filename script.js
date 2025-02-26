@@ -56,37 +56,37 @@ fetch(url)
     document.getElementById('trophies7d').textContent = trophiesLast7d;
     element = document.querySelector('.metric:has(#trophies7d) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '&#11205;';
+      element.innerHTML = '⯅';
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#trophies7d) .arrow').innerHTML = '&#11206';
+      document.querySelector('.metric:has(#trophies7d) .arrow').innerHTML = '⯆';
       element.classList.add('negative');
     }
     document.getElementById('trophies14d').textContent = trophiesLast14d;
     element = document.querySelector('.metric:has(#trophies14d) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '&#11205;';
+      element.innerHTML = '⯅';
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#trophies14d) .arrow').innerHTML = '&#11206';
+      document.querySelector('.metric:has(#trophies14d) .arrow').innerHTML = '⯆';
       element.classList.add('negative');
     }
     document.getElementById('trophies30d').textContent = trophiesLast30d;
     element = document.querySelector('.metric:has(#trophies30d) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '&#11205;';
+      element.innerHTML = '⯅';
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#trophies30d) .arrow').innerHTML = '&#11206';
+      document.querySelector('.metric:has(#trophies30d) .arrow').innerHTML = '⯆';
       element.classList.add('negative');
     }
     document.getElementById('avgDailyGain').textContent = avgDailyGain.toFixed(2);
     element = document.querySelector('.metric:has(#avgDailyGain) .arrow');
     if(trophiesLast7d > 0){
-      element.innerHTML = '&#11205;';
+      element.innerHTML = '⯅';
       element.classList.add('positive');
     } else if (trophiesLast7d < 0){
-      document.querySelector('.metric:has(#avgDailyGain) .arrow').innerHTML = '&#11206';
+      document.querySelector('.metric:has(#avgDailyGain) .arrow').innerHTML = '⯆';
       element.classList.add('negative');
     }
 
